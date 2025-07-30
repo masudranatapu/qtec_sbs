@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Symfony\Component\HttpFoundation\Response;
 use App\Http\Requests\Customer\CustomerLoginRequest;
+use App\Http\Requests\Customer\CustomerRegisterRequest;
 
 class CustomerAuthController extends Controller
 {
@@ -58,6 +60,35 @@ class CustomerAuthController extends Controller
         }
     }
 
+    public function register(CustomerRegisterRequest $request)
+    {
+        try {
+            DB::beginTransaction();
+
+            $customer = new User();
+            $customer->name = $request->name;
+            $customer->email = $request->email;
+            $customer->password = Hash::make($request->password);
+            $customer->save();
+
+            DB::commit();
+
+            return response()->json([
+                'status' =>  true,
+                'message' =>  'Customer successfully registered.',
+                'data' => [],
+                'code' =>  Response::HTTP_OK
+            ]);
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return response()->json([
+                'status' =>  false,
+                'message' =>  $e->getMessage(),
+                'data' =>  [],
+                'code' =>  Response::HTTP_INTERNAL_SERVER_ERROR
+            ]);
+        }
+    }
 
     public function customerLogout(Request $request)
     {
@@ -85,7 +116,7 @@ class CustomerAuthController extends Controller
 
             return response()->json([
                 'status' =>  false,
-                'message' =>  'Logout failed: ' . $e->getMessage(),
+                'message' =>  $e->getMessage(),
                 'data' =>  [],
                 'code' =>  Response::HTTP_INTERNAL_SERVER_ERROR
             ]);

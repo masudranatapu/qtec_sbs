@@ -8,14 +8,10 @@ use App\Http\Controllers\Auth\CustomerAuthController;
 Route::post('login', [CustomerAuthController::class, 'login']);
 Route::post('register', [CustomerAuthController::class, 'register']);
 
-Route::group(['prefix' => 'customer'], function () {
-    // login register
-    Route::middleware(['auth.customer'])->group(function () {
-        // log out
-        Route::post('logout', [CustomerAuthController::class, 'customerLogout']);
-    });
+Route::middleware(['auth.customer'])->group(function () {
+    // log out
+    Route::post('logout', [CustomerAuthController::class, 'customerLogout']);
 });
-
 
 // admin auth
 Route::group(['prefix' => 'admin'], function () {
