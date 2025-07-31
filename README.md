@@ -1,61 +1,102 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## A Simple Service Booking System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Simple Service Booking System API-based & Admin managed service booking system using Laravel 12x. The system allow customers to login, register, view services, and make bookings. This system also allow admin able to manage services and view bookings.
 
-## About Laravel
+[![](https://img.shields.io/badge/Laravel-v12.0-ff2e21.svg)](https://laravel.com)
+[![](https://img.shields.io/badge/sanctum-v4.0-5A29E4.svg)](https://laravel.com/docs/12.x/sanctum)
+[![](https://img.shields.io/badge/php-v8.2.3-5A29E4.svg)](https://www.php.net/)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   [Laravel 12.x](https://github.com/laravel/laravel)
+-   [Laravel Sanctum](https://laravel.com/docs/12.x/sanctum)
+-   [PHP](https://www.php.net)
+-   [MySql](https://www.mysql.com)
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+## Features
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+The following Sanctum features are implemented in this Simple Service Booking System:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+-   ✅ Laravel 12
+-   ✅ MySql
+-   ✅ PHP
+-   ✅ Laravel Sanctum
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## How To Use
 
-## Laravel Sponsors
+#### Clone the repository
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+```bash
+git clone https://github.com/masudranatapu/qtec_sbs
+```
 
-### Premium Partners
+#### copy .env.example file to .env
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+```bash
+copy .env.example .env
+```
 
-## Contributing
+#### Install Via Composer
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+composer install
+```
 
-## Code of Conduct
+#### Generate Application Key
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+php artisan key:generate
+```
 
-## Security Vulnerabilities
+#### Serve The Laravel Project
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+php artisan serve
+```
 
-## License
+#### Migrate Database
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+php artisan migrate
+```
+
+#### Run Seeder
+
+```bash
+php artisan db:seed
+```
+
+#### Proejct Serve
+
+```bash
+php artisan serve
+```
+
+#### Admin Login Informamiton
+
+```bash
+email       : admin@gmail.com
+pass        : password
+```
+
+#### Customer Login Informamiton
+
+```bash
+email       : customer@gmail.com
+pass        : password
+```
+
+## Postman Information
+
+In project public folder you can find postman api json file. (public/postman_api)
+
+-   ✅ Open postman.
+-   ✅ Make workspaces.
+-   ✅ Import the json file to your workspaces
+-   ✅ After import json file set you base url in environment setup and setup token for admin (admin_toekn) & customer (customer_token) access
+
+## Project Examinee
+
+Project examinee by Masud Rana Tapu:
+
+-   [Masud Rana Tapu](https://github.com/masudranatapu) - Examinee.
